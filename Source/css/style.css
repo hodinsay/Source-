@@ -1,0 +1,206 @@
+/* Box Model Hack */
+* {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+li, a, button{
+     text-decoration: none;
+     list-style-type: none;
+     color: black;
+}
+
+button{
+     padding: 5px 10px;
+     background-color: grey;
+     color: white;
+     border: none;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+.header{
+     background-color: #f5f9ff;
+}
+
+.navbar{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 1rem 1.5rem;
+}
+
+.hamburger {
+     display: none;
+}
+
+.bar {
+     display: block;
+     width: 25px;
+     height: 3px;
+     margin: 5px auto;
+     -webkit-transition: all 0.3s ease-in-out;
+     transition: all 0.3s ease-in-out;
+     background-color: #101010;
+}
+
+.nav-menu{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+}
+
+.nav-item{
+     margin-left: 5rem;
+}
+
+.nav-link{
+     font-size: 1.6rem;
+     font-weight: 400;
+     color: black;
+}
+
+.nav-logo{
+     font-size: 2.1rem;
+     font-weight: 500;
+     color: black;
+}
+
+main > section{
+     height: 500px;
+     width: 50%;
+     background-color:#f5f9ff;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+}
+
+main > section > h4{
+     margin: 0 25%;
+     padding: 5px 0;
+     color: grey;
+}
+
+main > section > h1{
+     font-size: 45px;
+     margin: 0 25%;
+     padding: 5px 0;
+}
+
+main > section > form{
+     margin: 0 25%;
+     padding: 5px 0;
+}
+
+main > section > p{
+     margin: 0 25%;
+     padding: 5px 0;
+}
+
+main > section > img{
+     width: 600px;
+     margin: 0 120px;
+     padding: 100px 0;
+}
+
+main > section > form > input{
+     background-color:#e3eeff;
+     padding: 5px 50px 5px 5px;
+     border: none;
+}
+
+
+section {
+     height: 300px;
+     float: left;
+     width: 25%;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     background-color: #f5f9ff;
+}
+
+section > img, h3, p, span{
+     padding: 5px 0;
+     margin: 0 20%;
+}
+
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+@media only screen and (max-width: 800px){
+     .nav-menu{
+          position: fixed;
+          left: -100%;
+          top: 5rem;
+          flex-direction: column;
+          background-color: #f5f9ff;
+          width: 100%;
+          border-radius: 10px;
+          text-align: center;
+          transition: 0.3s;
+          box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+     }
+
+     .nav-menu.active{
+          left: 0;
+     }
+
+     .nav-button{
+          display: none;
+     }
+
+     .header{
+          border-bottom: 1px solid black;
+     }
+
+     .hamburger {
+          display: block;
+          cursor: pointer;
+     }
+
+     .hamburger.active .bar:nth-child(2) {
+          opacity: 0;
+     }
+
+     .hamburger.active .bar:nth-child(1) {
+          transform: translateY(8px) rotate(45deg);
+     }
+
+     .hamburger.active .bar:nth-child(3) {
+          transform: translateY(-8px) rotate(-45deg);
+     }
+
+     main > section {
+          width: 100%;
+          border: none;
+     }
+
+     section {
+          width: 100%;
+          border-bottom: 1px solid black;
+          border-top: 1px solid black;
+     }
+}
